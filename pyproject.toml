@@ -3,6 +3,8 @@ name = "paper-phone"
 version = "0.1.0"
 description = "Print a foldable eight-page pocket booklet (daily, weekly, monthly, travel) that stands in for your phone."
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
     { name = "Theun van Vliet", email = "2880232+theunis@users.noreply.github.com" }
 ]

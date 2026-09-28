@@ -16,6 +16,10 @@ There are four editions, each in colour and in a separate black-and-white design
 
 ![Booklet spreads](docs/spreads.png)
 
+## Samples
+
+Printable examples of every edition are attached to the [v0.1.0 release](https://github.com/theunis/paper-phone/releases/tag/v0.1.0). The `_color.pdf` and `_bw.pdf` files are the sheets to print. The `_booklet.pdf` files show the same pages in reading order, for viewing on screen. They come from the example config: home in Utrecht and a four-night trip to Lisbon.
+
 ## Quick start
 
 You need [uv](https://docs.astral.sh/uv/) and Google Chrome. Chrome does the PDF printing through Playwright. Without Chrome, run `uv run playwright install chromium` once.
@@ -154,3 +158,7 @@ uv run pre-commit install
 - Right-to-left scripts and vertical Japanese are not handled. Japanese words print horizontally with romaji.
 - Coastlines work when OpenStreetMap delivers a closed coastline around the map area. On very large maps an unclosed coastline leaves the sea blank.
 - Overpass can be slow or busy. The client tries three mirrors, and a failed map leaves the other pages intact.
+
+## License
+
+The code is MIT licensed, see [LICENSE](LICENSE). The bundled fonts (Fraunces, Inter Tight, JetBrains Mono) are under the SIL Open Font License 1.1 and the Lucide icons under ISC; both licences sit next to the files in `src/paper_phone/assets/`. Map data in the generated PDFs is © OpenStreetMap contributors, available under the ODbL.
