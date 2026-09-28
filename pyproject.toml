@@ -1,0 +1,80 @@
+[project]
+name = "paper-phone"
+version = "0.1.0"
+description = "Print a foldable eight-page pocket booklet (daily, weekly, monthly, travel) that stands in for your phone."
+readme = "README.md"
+authors = [
+    { name = "Theun van Vliet", email = "2880232+theunis@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.5.0",
+    "holidays>=0.105",
+    "httpx>=0.28.1",
+    "icalendar>=7.3.0",
+    "jinja2>=3.1.6",
+    "playwright>=1.63.0",
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+    "pyyaml>=6.0.3",
+    "recurring-ical-events>=3.8.2",
+    "segno>=1.6.6",
+    "shapely>=2.1.2",
+]
+
+[project.scripts]
+paper-phone = "paper_phone.cli:cli"
+
+[build-system]
+requires = ["uv_build>=0.11.6,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.9",
+    "ty>=0.0.84",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "B",    # flake8-bugbear
+    "UP",   # pyupgrade
+    "SIM",  # flake8-simplify
+    "C4",   # flake8-comprehensions
+    "RUF",  # ruff-specific
+]
+
+# Typographic characters are deliberate: this project prints.
+allowed-confusables = ["×", "–", "′", "’"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ty.environment]
+python-version = "3.12"
+
+[tool.ty.src]
+include = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --cov=paper_phone --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["paper_phone"]
+branch = true

@@ -1,0 +1,11 @@
+{% macro contacts_strip(k) %}
+<div class="contacts">
+  <div class="ice">
+    {% if k.owner.name %}<div class="found">If found, please return to <b>{{ k.owner.name }}</b>{% if k.owner.phone %} · <span class="nw">{{ k.owner.phone }}</span>{% elif k.owner.email %} · <span class="nw">{{ k.owner.email }}</span>{% endif %}</div>{% endif %}
+    {% for p in k.people %}<div class="person"><b>{{ p.name }}</b>{% if p.note %} <span class="muted">{{ p.note }}</span>{% endif %}{% if p.phone %} <span class="mono">{{ p.phone }}</span>{% endif %}</div>{% endfor %}
+    {% if not k.owner.name and not k.people %}<div class="found">Name ____________________ Phone ______________</div>{% endif %}
+  </div>
+  <div class="sos"><span class="k">Emergency{% if k.country %} · {{ k.country }}{% endif %}</span><span class="n">{{ k.emergency }}</span></div>
+</div>
+{% endmacro %}
+{% macro wx_icon(day) %}{% if day %}{{ icon(day.icon) }}{% endif %}{% endmacro %}

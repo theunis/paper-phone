@@ -1,0 +1,12 @@
+{% if c.all_day %}<div class="allday">{% for i in c.all_day %}<span class="chip{% if i.kind == 'holiday' %} hol{% endif %}">{% if i.kind == 'holiday' %}{{ icon("flag") }} {% endif %}{{ i.title }}</span>{% endfor %}</div>{% endif %}
+<div class="timeline">
+  {% for h in c.hours %}
+  <div class="hour" style="top: {{ '%.4f' % ((loop.index0) / (c.hours|length) * 100) }}%; height: {{ '%.4f' % (100 / (c.hours|length)) }}%"><span>{{ '%02d' % h }}</span></div>
+  {% endfor %}
+  {% for b in c.blocks %}
+  <div class="ev{% if b.short %} short{% endif %}" style="top: calc({{ '%.3f' % b.top }}% + .15mm); height: calc({{ '%.3f' % b.height }}% - .3mm); left: {{ '%.3f' % (b.col / b.cols * 100) }}%; width: calc({{ '%.3f' % (100 / b.cols) }}% - .5mm)">
+    <span class="t">{{ t_hm(b.item.start) }}</span> <b>{{ b.item.title }}</b>{% if b.item.location and not b.short %}<br><span class="loc">{{ b.item.location }}</span>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% if c.outside %}<div class="outside">{% for i in c.outside %}<span><span class="mono">{{ t_hm(i.start) }}</span> {{ i.title }}</span>{% endfor %}</div>{% endif %}

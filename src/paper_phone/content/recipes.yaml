@@ -1,0 +1,756 @@
+# Recipes for the paper phone. Each fits one A7 page.
+# Schema: id, title, subtitle, origin, serves, time_min, seasons, diet, tags,
+# ingredients [{qty, item}], steps [str], tip.
+
+# ---------------------------------------------------------------- all year
+
+- id: "shakshuka"
+  title: "Shakshuka"
+  subtitle: "Eggs poached in a spiced tomato and pepper sauce"
+  origin: "Maghreb"
+  serves: 2
+  time_min: 30
+  seasons: ["all"]
+  diet: ["vegetarian"]
+  tags: ["one-pan", "brunch"]
+  ingredients:
+    - {qty: "2 tbsp", item: "olive oil"}
+    - {qty: "1", item: "onion, sliced"}
+    - {qty: "1", item: "red pepper, sliced"}
+    - {qty: "2 cloves", item: "garlic, sliced"}
+    - {qty: "1 tsp", item: "ground cumin"}
+    - {qty: "1 tsp", item: "sweet paprika"}
+    - {qty: "400 g", item: "chopped tomatoes (tin)"}
+    - {qty: "4", item: "eggs"}
+    - {qty: "1 handful", item: "coriander, chopped"}
+  steps:
+    - "Soften onion and pepper in the oil over medium heat, 8 min."
+    - "Add garlic, cumin and paprika and stir until fragrant, 1 min."
+    - "Add the tomatoes, season and simmer until thick, 10 min."
+    - "Make 4 hollows, crack in the eggs, cover and cook on low until the whites set, 6–8 min."
+    - "Scatter with coriander and serve from the pan with bread."
+  tip: "Crumble feta over the top before serving."
+
+- id: "tortilla-espanola"
+  title: "Tortilla española"
+  subtitle: "Thick Spanish omelette of potato and soft onion"
+  origin: "Spain"
+  serves: 4
+  time_min: 45
+  seasons: ["all"]
+  diet: ["vegetarian"]
+  tags: ["eggs", "tapas"]
+  ingredients:
+    - {qty: "600 g", item: "waxy potatoes, thinly sliced"}
+    - {qty: "1", item: "onion, thinly sliced"}
+    - {qty: "200 ml", item: "olive oil"}
+    - {qty: "6", item: "eggs"}
+    - {qty: "1 tsp", item: "salt"}
+    - {qty: "to taste", item: "black pepper"}
+  steps:
+    - "Cook potatoes and onion gently in the oil in a 22 cm non-stick pan until soft, not brown, 20 min."
+    - "Drain in a sieve set over a bowl and keep the oil. Beat the eggs with salt and pepper."
+    - "Stir the hot potatoes into the eggs and leave 5 min."
+    - "Heat 2 tbsp of the oil in the pan, add the mix and cook on medium-low until nearly set, 5 min."
+    - "Invert onto a plate, slide back in and cook the other side, 2–3 min. Rest 5 min before cutting."
+  tip: "Keep the leftover oil for frying; it's full of onion flavour."
+
+- id: "pannenkoeken"
+  title: "Pannenkoeken"
+  subtitle: "Large, thin Dutch pancakes with apple and syrup"
+  origin: "Netherlands"
+  serves: 4
+  time_min: 40
+  seasons: ["all"]
+  diet: ["vegetarian"]
+  tags: ["dutch classic", "family"]
+  ingredients:
+    - {qty: "250 g", item: "plain flour"}
+    - {qty: "pinch", item: "salt"}
+    - {qty: "500 ml", item: "milk"}
+    - {qty: "2", item: "eggs"}
+    - {qty: "40 g", item: "butter, for frying"}
+    - {qty: "2", item: "apples, thinly sliced"}
+    - {qty: "to serve", item: "stroop or icing sugar"}
+  steps:
+    - "Whisk flour, salt and half the milk into a smooth, thick batter. Beat in the eggs, then the rest of the milk."
+    - "Melt a knob of butter in a large frying pan over medium-high heat."
+    - "Pour in a ladle of batter, swirl to cover the base and lay a few apple slices on top."
+    - "Cook until the top looks dry, 2 min, then flip and cook 1–2 min more."
+    - "Repeat with the rest of the batter, adding butter each time. Serve hot with stroop."
+  tip: "For savoury ones, scatter grated cheese and mushrooms on before flipping."
+
+- id: "pad-kra-pao"
+  title: "Pad kra pao"
+  subtitle: "Stir-fried pork with holy basil and a crispy egg"
+  origin: "Thailand"
+  serves: 2
+  time_min: 20
+  seasons: ["all"]
+  diet: ["meat"]
+  tags: ["stir-fry", "quick"]
+  ingredients:
+    - {qty: "4 cloves", item: "garlic"}
+    - {qty: "2–4", item: "bird's-eye chillies"}
+    - {qty: "4 tbsp", item: "vegetable oil"}
+    - {qty: "2", item: "eggs"}
+    - {qty: "300 g", item: "pork mince"}
+    - {qty: "1 tbsp", item: "oyster sauce"}
+    - {qty: "2 tsp", item: "fish sauce"}
+    - {qty: "1 tsp", item: "sugar"}
+    - {qty: "1 handful", item: "holy or Thai basil"}
+  steps:
+    - "Pound garlic and chillies to a rough paste, or chop finely."
+    - "Fry the eggs in the hot oil, spooning oil over, until crisp at the edges, 2 min. Set aside."
+    - "Pour off most of the oil. Fry the paste 20 sec, add the pork and stir-fry until cooked, 4 min."
+    - "Add oyster sauce, fish sauce, sugar and a splash of water; toss 1 min."
+    - "Stir in the basil until just wilted. Serve over rice with the eggs on top."
+  tip: "Thai basil works fine if you can't find holy basil (bai kra pao)."
+
+- id: "fish-molee"
+  title: "Fish molee"
+  subtitle: "Mild Kerala fish curry with coconut and curry leaves"
+  origin: "Kerala, India"
+  serves: 2
+  time_min: 30
+  seasons: ["all"]
+  diet: ["pescatarian"]
+  tags: ["curry", "coconut"]
+  ingredients:
+    - {qty: "400 g", item: "firm white fish, in chunks"}
+    - {qty: "½ tsp", item: "ground turmeric"}
+    - {qty: "2 tbsp", item: "coconut oil"}
+    - {qty: "12", item: "curry leaves"}
+    - {qty: "1", item: "onion, thinly sliced"}
+    - {qty: "2", item: "green chillies, slit"}
+    - {qty: "3 cm", item: "ginger, in thin matchsticks"}
+    - {qty: "400 ml", item: "coconut milk"}
+    - {qty: "½", item: "lime, juiced"}
+  steps:
+    - "Toss the fish with a pinch of the turmeric and a little salt; set aside."
+    - "Fry curry leaves in the oil, 20 sec. Add onion, chillies and ginger; soften without browning, 8 min."
+    - "Stir in the rest of the turmeric, add the coconut milk and bring to a gentle simmer."
+    - "Slide in the fish and simmer very gently, spooning sauce over, until just cooked, 5–6 min."
+    - "Add lime juice and salt to taste. Serve with rice."
+  tip: "Keep it at a bare simmer so the coconut milk stays silky."
+
+# ---------------------------------------------------------------- spring
+
+- id: "pea-lemon-risotto"
+  title: "Pea and lemon risotto"
+  subtitle: "Creamy risotto with sweet peas, lemon and cheese"
+  origin: "Italy"
+  serves: 2
+  time_min: 35
+  seasons: ["spring"]
+  diet: ["vegetarian"]
+  tags: ["one-pot", "comfort"]
+  ingredients:
+    - {qty: "30 g", item: "butter"}
+    - {qty: "1", item: "shallot, finely chopped"}
+    - {qty: "160 g", item: "risotto rice"}
+    - {qty: "100 ml", item: "dry white wine"}
+    - {qty: "750 ml", item: "hot vegetable stock"}
+    - {qty: "150 g", item: "peas (frozen is fine)"}
+    - {qty: "40 g", item: "vegetarian hard cheese"}
+    - {qty: "½", item: "lemon, zest and juice"}
+  steps:
+    - "Soften the shallot in half the butter, 4 min. Add the rice and stir until glossy, 1 min."
+    - "Pour in the wine and stir until absorbed."
+    - "Add the stock a ladle at a time, stirring until each is absorbed, 18–20 min."
+    - "Add the peas for the last 3 min. The rice should be tender with a slight bite."
+    - "Off the heat, beat in the rest of the butter, the grated cheese, lemon zest and a squeeze of juice."
+    - "Cover and rest 2 min. Serve loose enough to spread on the plate."
+  tip: "Add chopped asparagus with the peas, or finish with torn mint."
+
+- id: "bibimbap"
+  title: "Bibimbap"
+  subtitle: "Rice bowl with sesame vegetables, egg and gochujang"
+  origin: "Korea"
+  serves: 2
+  time_min: 35
+  seasons: ["spring"]
+  diet: ["vegetarian"]
+  tags: ["bowl"]
+  ingredients:
+    - {qty: "150 g", item: "short-grain rice"}
+    - {qty: "2 tbsp", item: "gochujang"}
+    - {qty: "2 tbsp", item: "sesame oil"}
+    - {qty: "200 g", item: "spinach"}
+    - {qty: "1 clove", item: "garlic, grated"}
+    - {qty: "150 g", item: "bean sprouts"}
+    - {qty: "2", item: "carrots, in matchsticks"}
+    - {qty: "2", item: "eggs"}
+    - {qty: "1 tbsp", item: "toasted sesame seeds"}
+  steps:
+    - "Cook the rice. Mix the gochujang with 1 tsp sesame oil and 1 tbsp water."
+    - "Blanch spinach 30 sec, cool and squeeze dry. Toss with the garlic, a little sesame oil and salt."
+    - "Blanch bean sprouts 2 min, drain and season the same way. Stir-fry carrots in sesame oil, 2 min."
+    - "Fry the eggs until the whites are crisp and the yolks still runny."
+    - "Top the rice with the vegetables, an egg, sauce and sesame seeds. Mix well and eat."
+  tip: "Press the rice into a hot oiled pan for 5 min for a crispy base."
+
+- id: "asperges"
+  title: "Asperges met ham en ei"
+  subtitle: "White asparagus with ham, egg and melted butter"
+  origin: "Netherlands"
+  serves: 2
+  time_min: 40
+  seasons: ["spring"]
+  diet: ["meat"]
+  tags: ["dutch classic", "seasonal"]
+  ingredients:
+    - {qty: "1 kg", item: "white asparagus"}
+    - {qty: "500 g", item: "new potatoes"}
+    - {qty: "4", item: "eggs"}
+    - {qty: "150 g", item: "cooked ham, sliced"}
+    - {qty: "100 g", item: "butter"}
+    - {qty: "pinch", item: "nutmeg"}
+    - {qty: "1 handful", item: "parsley, chopped"}
+  steps:
+    - "Peel the asparagus from just below the tip downwards and snap off the woody ends."
+    - "Boil the potatoes in salted water until tender, 15–20 min."
+    - "Simmer the asparagus in salted water, 5 min, then leave in the water off the heat until tender, 10 min."
+    - "Hard-boil the eggs, 9 min. Cool, peel and chop."
+    - "Melt the butter until foaming. Plate everything, pour over the butter, add nutmeg and parsley."
+  tip: "Save the peels and cooking water for a quick asparagus soup."
+
+- id: "merluza-salsa-verde"
+  title: "Merluza en salsa verde"
+  subtitle: "Hake in a garlicky parsley and white wine sauce"
+  origin: "Basque Country"
+  serves: 2
+  time_min: 25
+  seasons: ["spring"]
+  diet: ["pescatarian"]
+  tags: ["one-pan", "quick"]
+  ingredients:
+    - {qty: "2", item: "hake fillets (150 g each)"}
+    - {qty: "4 tbsp", item: "olive oil"}
+    - {qty: "4 cloves", item: "garlic, thinly sliced"}
+    - {qty: "1 tbsp", item: "plain flour"}
+    - {qty: "150 ml", item: "dry white wine"}
+    - {qty: "150 ml", item: "fish stock"}
+    - {qty: "100 g", item: "peas"}
+    - {qty: "1 bunch", item: "flat-leaf parsley, chopped"}
+  steps:
+    - "Season the hake. Warm oil and garlic gently in a wide pan until the garlic just turns golden."
+    - "Stir in the flour for 1 min, then whisk in wine and stock and simmer 2 min."
+    - "Add the hake skin side up and the peas. Cover and cook on low, 4 min."
+    - "Turn the fish, add most of the parsley and swirl the pan until the sauce turns silky, 3 min."
+    - "Scatter over the rest of the parsley. Serve with bread or new potatoes."
+  tip: "Add a handful of clams with the fish; discard any that stay shut."
+
+- id: "rhubarb-crumble"
+  title: "Rhubarb crumble"
+  subtitle: "Tart rhubarb under a buttery oat crumble"
+  origin: "Britain"
+  serves: 4
+  time_min: 45
+  seasons: ["spring"]
+  diet: ["vegetarian"]
+  tags: ["dessert", "bake"]
+  ingredients:
+    - {qty: "500 g", item: "rhubarb, in 3 cm pieces"}
+    - {qty: "60 g", item: "caster sugar"}
+    - {qty: "1", item: "orange, zested"}
+    - {qty: "150 g", item: "plain flour"}
+    - {qty: "pinch", item: "salt"}
+    - {qty: "100 g", item: "cold butter, cubed"}
+    - {qty: "75 g", item: "light brown sugar"}
+    - {qty: "40 g", item: "rolled oats"}
+  steps:
+    - "Heat the oven to 190 °C. Toss rhubarb with caster sugar and orange zest in a medium baking dish."
+    - "Rub the butter into flour and salt with your fingertips until it looks like breadcrumbs."
+    - "Stir in the brown sugar and oats and scatter over the fruit; don't press it down."
+    - "Bake until golden and bubbling at the edges, 30–35 min."
+    - "Rest 5 min, then serve with custard, cream or vanilla ice cream."
+  tip: "Swap half the rhubarb for strawberries once summer arrives."
+
+# ------------------------------------------------------- spring and summer
+
+- id: "lamb-kofta"
+  title: "Lamb kofta"
+  subtitle: "Spiced lamb skewers with minty yoghurt and flatbread"
+  origin: "Levant"
+  serves: 4
+  time_min: 30
+  seasons: ["spring", "summer"]
+  diet: ["meat"]
+  tags: ["grill", "bbq"]
+  ingredients:
+    - {qty: "500 g", item: "lamb mince"}
+    - {qty: "1", item: "small onion, grated"}
+    - {qty: "2 cloves", item: "garlic, grated"}
+    - {qty: "2 tsp", item: "ground cumin"}
+    - {qty: "1 tsp", item: "ground coriander"}
+    - {qty: "1 handful", item: "mint, chopped"}
+    - {qty: "200 g", item: "Greek yoghurt"}
+    - {qty: "½", item: "lemon, juiced"}
+    - {qty: "4", item: "flatbreads"}
+  steps:
+    - "Squeeze the grated onion dry. Mix with lamb, garlic, spices, half the mint and 1 tsp salt."
+    - "Shape into 8 sausages around skewers (soak wooden ones first). Chill 10 min to firm up."
+    - "Grill or griddle over high heat, turning, until charred and cooked through, 8–10 min."
+    - "Stir the rest of the mint, the lemon juice and a pinch of salt into the yoghurt."
+    - "Warm the flatbreads and serve with the kofta, yoghurt and a chopped salad."
+  tip: "No grill? Fry them in a hot pan with a little oil."
+
+- id: "fish-tacos"
+  title: "Fish tacos"
+  subtitle: "Spiced white fish, crunchy slaw and lime crema"
+  origin: "Mexico"
+  serves: 2
+  time_min: 30
+  seasons: ["spring", "summer"]
+  diet: ["pescatarian"]
+  tags: ["street food", "quick"]
+  ingredients:
+    - {qty: "150 g", item: "red cabbage, finely shredded"}
+    - {qty: "1", item: "lime"}
+    - {qty: "100 g", item: "sour cream"}
+    - {qty: "300 g", item: "firm white fish, e.g. cod"}
+    - {qty: "1 tsp", item: "smoked paprika"}
+    - {qty: "1 tsp", item: "ground cumin"}
+    - {qty: "1 tbsp", item: "sunflower oil"}
+    - {qty: "6", item: "small corn tortillas"}
+    - {qty: "1 handful", item: "coriander leaves"}
+  steps:
+    - "Toss the cabbage with half the lime juice and a pinch of salt; leave to soften."
+    - "Mix sour cream with the lime zest, remaining juice and a pinch of salt."
+    - "Rub the fish with paprika, cumin and salt. Fry in the oil over medium-high heat, 3 min per side."
+    - "Warm the tortillas in a dry pan, 30 sec per side, and keep them wrapped in a tea towel."
+    - "Flake the fish into the tortillas and top with slaw, crema and coriander."
+  tip: "Add sliced jalapeño or pickled red onion for extra bite."
+
+# ---------------------------------------------------------------- summer
+
+- id: "bircher-muesli"
+  title: "Bircher muesli"
+  subtitle: "Overnight oats with grated apple, yoghurt and berries"
+  origin: "Switzerland"
+  serves: 2
+  time_min: 10
+  seasons: ["summer"]
+  diet: ["vegetarian"]
+  tags: ["breakfast", "make-ahead", "no-cook"]
+  ingredients:
+    - {qty: "100 g", item: "rolled oats"}
+    - {qty: "200 ml", item: "milk"}
+    - {qty: "1", item: "apple"}
+    - {qty: "1 tbsp", item: "lemon juice"}
+    - {qty: "150 g", item: "plain yoghurt"}
+    - {qty: "1 tbsp", item: "honey"}
+    - {qty: "150 g", item: "berries"}
+    - {qty: "30 g", item: "hazelnuts, chopped"}
+  steps:
+    - "Stir the oats and milk together, cover and chill overnight (at least 4 hours)."
+    - "In the morning, grate in the apple, skin and all, and stir in the lemon juice."
+    - "Fold in the yoghurt and honey. Loosen with a splash of milk if it's too thick."
+    - "Top with berries and hazelnuts and serve cold."
+  tip: "The soaked oats keep 2 days in the fridge; grate the apple in fresh."
+
+- id: "gazpacho"
+  title: "Gazpacho"
+  subtitle: "Chilled raw tomato soup from Andalusia"
+  origin: "Andalusia, Spain"
+  serves: 4
+  time_min: 20
+  seasons: ["summer"]
+  diet: ["vegan"]
+  tags: ["soup", "no-cook"]
+  ingredients:
+    - {qty: "50 g", item: "stale white bread"}
+    - {qty: "1 kg", item: "ripe tomatoes, chopped"}
+    - {qty: "½", item: "cucumber, peeled, chopped"}
+    - {qty: "1", item: "green pepper, deseeded"}
+    - {qty: "1 clove", item: "garlic"}
+    - {qty: "80 ml", item: "extra virgin olive oil"}
+    - {qty: "2 tbsp", item: "sherry vinegar"}
+    - {qty: "1 tsp", item: "salt"}
+  steps:
+    - "Soak the bread in a little water for 5 min, then squeeze it dry."
+    - "Blend tomatoes, cucumber, pepper, garlic and bread until very smooth."
+    - "With the motor running, pour in the oil, then add the vinegar and salt."
+    - "Push through a sieve for a silky texture, if you like. Taste and adjust."
+    - "Chill for at least 1 hour and serve very cold, with a drizzle of oil."
+  tip: "Top with diced cucumber, pepper and a few croutons."
+
+- id: "pasta-alla-norma"
+  title: "Pasta alla Norma"
+  subtitle: "Sicilian pasta with fried aubergine and tomato"
+  origin: "Sicily"
+  serves: 2
+  time_min: 40
+  seasons: ["summer"]
+  diet: ["vegetarian"]
+  tags: ["pasta"]
+  ingredients:
+    - {qty: "1", item: "aubergine, in 2 cm cubes"}
+    - {qty: "5 tbsp", item: "olive oil"}
+    - {qty: "2 cloves", item: "garlic, sliced"}
+    - {qty: "pinch", item: "chilli flakes"}
+    - {qty: "400 g", item: "chopped tomatoes (tin)"}
+    - {qty: "180 g", item: "rigatoni"}
+    - {qty: "1 handful", item: "basil leaves"}
+    - {qty: "50 g", item: "ricotta salata, grated"}
+  steps:
+    - "Fry the aubergine in 4 tbsp oil over medium-high heat until golden and soft, 10–12 min. Set aside."
+    - "Add the rest of the oil, garlic and chilli; sizzle 1 min. Add tomatoes and simmer 15 min."
+    - "Meanwhile, cook the pasta in well-salted water until al dente."
+    - "Stir most of the aubergine and torn basil into the sauce. Toss with the pasta and a splash of its water."
+    - "Top with the rest of the aubergine, basil and the ricotta salata."
+  tip: "No ricotta salata? Crumbled feta works well."
+
+- id: "green-curry-tofu"
+  title: "Thai green curry"
+  subtitle: "Coconut curry with tofu, green beans and Thai basil"
+  origin: "Thailand"
+  serves: 2
+  time_min: 30
+  seasons: ["summer"]
+  diet: ["vegan"]
+  tags: ["curry", "quick"]
+  ingredients:
+    - {qty: "200 g", item: "firm tofu, cubed"}
+    - {qty: "1 tbsp", item: "vegetable oil"}
+    - {qty: "3 tbsp", item: "vegan green curry paste"}
+    - {qty: "400 ml", item: "coconut milk"}
+    - {qty: "1 tbsp", item: "soy sauce"}
+    - {qty: "1 tsp", item: "sugar"}
+    - {qty: "150 g", item: "green beans, halved"}
+    - {qty: "1", item: "courgette, in half-moons"}
+    - {qty: "1 handful", item: "Thai basil"}
+  steps:
+    - "Fry the tofu in the oil until golden on all sides, 8 min. Lift out."
+    - "Fry the curry paste with a few spoons of the thick coconut cream until fragrant, 2 min."
+    - "Add the rest of the coconut milk, the soy sauce and sugar and bring to a simmer."
+    - "Add beans and courgette and simmer until just tender, 5 min. Return the tofu."
+    - "Stir in the basil and serve with jasmine rice."
+  tip: "Finish with a squeeze of lime, then taste and balance salt and sweet."
+
+- id: "ratatouille"
+  title: "Ratatouille"
+  subtitle: "Provençal stew of summer vegetables in olive oil"
+  origin: "Provence"
+  serves: 4
+  time_min: 50
+  seasons: ["summer"]
+  diet: ["vegan"]
+  tags: ["one-pot", "make-ahead"]
+  ingredients:
+    - {qty: "5 tbsp", item: "olive oil"}
+    - {qty: "1", item: "aubergine, in 2 cm cubes"}
+    - {qty: "2", item: "courgettes, in 2 cm cubes"}
+    - {qty: "1", item: "onion, chopped"}
+    - {qty: "1", item: "red pepper, diced"}
+    - {qty: "3 cloves", item: "garlic, sliced"}
+    - {qty: "1 tsp", item: "herbes de Provence"}
+    - {qty: "500 g", item: "ripe tomatoes, chopped"}
+    - {qty: "1 handful", item: "basil leaves"}
+  steps:
+    - "Brown the aubergine in 2 tbsp oil, 8 min; set aside. Brown the courgettes in 1 tbsp oil, 5 min."
+    - "Soften onion and pepper in the rest of the oil, 8 min. Add garlic and herbs, 1 min."
+    - "Add the tomatoes, season and simmer until saucy, 10 min."
+    - "Return the aubergine and courgettes and simmer gently until everything is tender, 10 min."
+    - "Tear in the basil. Serve warm or at room temperature."
+  tip: "Even better the next day. Serve with a fried egg or crusty bread."
+
+# ---------------------------------------------------------------- autumn
+
+- id: "mushroom-stroganoff"
+  title: "Mushroom stroganoff"
+  subtitle: "Paprika mushrooms in a creamy mustard sauce"
+  origin: "Russia"
+  serves: 2
+  time_min: 25
+  seasons: ["autumn"]
+  diet: ["vegetarian"]
+  tags: ["quick", "comfort"]
+  ingredients:
+    - {qty: "30 g", item: "butter"}
+    - {qty: "400 g", item: "chestnut mushrooms, sliced"}
+    - {qty: "1", item: "onion, thinly sliced"}
+    - {qty: "2 cloves", item: "garlic, crushed"}
+    - {qty: "2 tsp", item: "sweet paprika"}
+    - {qty: "100 ml", item: "vegetable stock"}
+    - {qty: "1 tsp", item: "Dijon mustard"}
+    - {qty: "150 g", item: "crème fraîche"}
+    - {qty: "1 handful", item: "parsley, chopped"}
+  steps:
+    - "Fry the mushrooms in half the butter in a hot, wide pan until browned, 6–8 min. Tip out."
+    - "Soften the onion in the rest of the butter, 6 min. Add garlic and paprika and cook 1 min."
+    - "Return the mushrooms, add stock and mustard and bubble 2 min."
+    - "Stir in the crème fraîche and heat through. Season well."
+    - "Scatter with parsley and serve with rice, tagliatelle or mash."
+  tip: "Use oat cream and olive oil to make it vegan."
+
+- id: "mujaddara"
+  title: "Mujaddara"
+  subtitle: "Lentils and rice with deeply caramelised onions"
+  origin: "Levant"
+  serves: 4
+  time_min: 45
+  seasons: ["autumn"]
+  diet: ["vegan"]
+  tags: ["one-pot", "pantry"]
+  ingredients:
+    - {qty: "150 g", item: "brown or green lentils"}
+    - {qty: "3", item: "large onions, thinly sliced"}
+    - {qty: "5 tbsp", item: "olive oil"}
+    - {qty: "150 g", item: "basmati rice, rinsed"}
+    - {qty: "1 tsp", item: "ground cumin"}
+    - {qty: "½ tsp", item: "ground allspice"}
+    - {qty: "1 handful", item: "parsley, chopped"}
+    - {qty: "1", item: "lemon, in wedges"}
+  steps:
+    - "Simmer the lentils in plenty of water until just tender but holding shape, 15–20 min. Drain."
+    - "Meanwhile, fry the onions in the oil over medium-high heat, stirring often, until deep brown, 20 min."
+    - "Lift out half the onions to drain on paper; they crisp as they cool."
+    - "Stir rice and spices into the pan, 1 min. Add the lentils, 300 ml water and 1 tsp salt."
+    - "Cover and cook on low, 15 min. Rest off the heat, lid on, 5 min, then fluff with a fork."
+    - "Serve topped with the crispy onions, parsley and lemon wedges."
+  tip: "A spoon of thick yoghurt and a crisp salad make it a full meal."
+
+- id: "gnocchi-squash-sage"
+  title: "Gnocchi with squash and sage"
+  subtitle: "Crisp gnocchi, roast squash and nutty sage butter"
+  origin: "Italy"
+  serves: 2
+  time_min: 35
+  seasons: ["autumn"]
+  diet: ["vegetarian"]
+  tags: ["comfort"]
+  ingredients:
+    - {qty: "500 g", item: "butternut squash, in cubes"}
+    - {qty: "2 tbsp", item: "olive oil"}
+    - {qty: "500 g", item: "fresh gnocchi"}
+    - {qty: "40 g", item: "butter"}
+    - {qty: "12", item: "sage leaves"}
+    - {qty: "1 clove", item: "garlic, sliced"}
+    - {qty: "30 g", item: "hazelnuts, chopped"}
+    - {qty: "30 g", item: "vegetarian hard cheese"}
+  steps:
+    - "Heat the oven to 220 °C. Toss squash with 1 tbsp oil and salt; roast until soft and browned, 25 min."
+    - "Meanwhile, fry the gnocchi in the rest of the oil in a wide pan until golden, 8–10 min."
+    - "Push the gnocchi aside, add butter, sage and garlic and sizzle until the butter smells nutty, 2 min."
+    - "Toss in the roast squash and hazelnuts. Season with salt and pepper."
+    - "Serve with the cheese grated over."
+  tip: "Swap the squash for roast Brussels sprouts or mushrooms later in the year."
+
+- id: "miso-salmon"
+  title: "Miso-glazed salmon"
+  subtitle: "Sweet-salty grilled salmon with rice and pak choi"
+  origin: "Japan"
+  serves: 2
+  time_min: 25
+  seasons: ["autumn"]
+  diet: ["pescatarian"]
+  tags: ["quick", "oven"]
+  ingredients:
+    - {qty: "150 g", item: "short-grain rice"}
+    - {qty: "2 tbsp", item: "white miso"}
+    - {qty: "1 tbsp", item: "mirin"}
+    - {qty: "1 tbsp", item: "soy sauce"}
+    - {qty: "1 tsp", item: "honey"}
+    - {qty: "1 tsp", item: "fresh ginger, grated"}
+    - {qty: "2", item: "salmon fillets, skin on"}
+    - {qty: "2 heads", item: "pak choi, halved"}
+    - {qty: "1 tsp", item: "sesame seeds"}
+  steps:
+    - "Cook the rice. Heat the oven grill to high and line a tray with foil."
+    - "Mix miso, mirin, soy, honey and ginger and spread over the top of the salmon."
+    - "Grill 10 cm below the heat until caramelised and just cooked through, 7–9 min."
+    - "Steam or stir-fry the pak choi, 3 min, and drizzle with a little soy."
+    - "Serve the salmon on rice with pak choi, sprinkled with sesame seeds."
+  tip: "Watch it closely under the grill: miso burns quickly."
+
+# ------------------------------------------------------- autumn and winter
+
+- id: "apple-porridge"
+  title: "Apple and cinnamon porridge"
+  subtitle: "Creamy oat porridge with caramelised apple"
+  origin: "Scotland"
+  serves: 2
+  time_min: 15
+  seasons: ["autumn", "winter"]
+  diet: ["vegan"]
+  tags: ["breakfast", "quick"]
+  ingredients:
+    - {qty: "80 g", item: "rolled oats"}
+    - {qty: "400 ml", item: "oat milk"}
+    - {qty: "100 ml", item: "water"}
+    - {qty: "pinch", item: "salt"}
+    - {qty: "1", item: "apple, diced"}
+    - {qty: "1 tsp", item: "coconut oil"}
+    - {qty: "½ tsp", item: "ground cinnamon"}
+    - {qty: "2 tbsp", item: "maple syrup"}
+    - {qty: "20 g", item: "walnuts, chopped"}
+  steps:
+    - "Bring the oats, oat milk, water and salt to a simmer in a saucepan."
+    - "Cook on low, stirring often, until thick and creamy, 5–6 min."
+    - "Meanwhile, fry the apple in the oil with cinnamon and 1 tbsp maple syrup until soft, 5 min."
+    - "Spoon into bowls and top with the apple, walnuts and the rest of the syrup."
+  tip: "Use a grated pear instead of apple, or stir in a spoon of peanut butter."
+
+- id: "moules-marinieres"
+  title: "Moules marinières"
+  subtitle: "Mussels steamed in white wine, garlic and parsley"
+  origin: "France"
+  serves: 2
+  time_min: 25
+  seasons: ["autumn", "winter"]
+  diet: ["pescatarian"]
+  tags: ["one-pot", "quick"]
+  ingredients:
+    - {qty: "1 kg", item: "mussels"}
+    - {qty: "30 g", item: "butter"}
+    - {qty: "2", item: "shallots, finely chopped"}
+    - {qty: "2 cloves", item: "garlic, chopped"}
+    - {qty: "150 ml", item: "dry white wine"}
+    - {qty: "3 sprigs", item: "thyme"}
+    - {qty: "1 handful", item: "parsley, chopped"}
+    - {qty: "1", item: "baguette, to serve"}
+  steps:
+    - "Scrub the mussels and pull off the beards. Discard any that are cracked, or open and won't close when tapped."
+    - "Melt the butter in a large pot and soften shallots and garlic, 3 min."
+    - "Add the wine and thyme and bring to a rolling boil."
+    - "Tip in the mussels, cover and steam, shaking the pot now and then, until open, 4–5 min."
+    - "Stir in the parsley and serve at once with bread for the juices."
+  tip: "Belgian style: serve with fries and mayonnaise (moules-frites)."
+
+- id: "mapo-tofu"
+  title: "Mushroom mapo tofu"
+  subtitle: "Soft tofu in a fiery Sichuan chilli bean sauce"
+  origin: "Sichuan, China"
+  serves: 2
+  time_min: 25
+  seasons: ["autumn", "winter"]
+  diet: ["vegan"]
+  tags: ["spicy", "quick"]
+  ingredients:
+    - {qty: "400 g", item: "soft tofu, in 2 cm cubes"}
+    - {qty: "2 tbsp", item: "vegetable oil"}
+    - {qty: "150 g", item: "shiitake, finely chopped"}
+    - {qty: "2 tbsp", item: "chilli bean paste"}
+    - {qty: "3 cloves", item: "garlic, finely chopped"}
+    - {qty: "1 tbsp", item: "soy sauce"}
+    - {qty: "2 tsp", item: "cornflour + 2 tbsp water"}
+    - {qty: "1 tsp", item: "Sichuan pepper, ground"}
+    - {qty: "2", item: "spring onions, sliced"}
+  steps:
+    - "Simmer the tofu in lightly salted water, 2 min, to firm it up. Drain carefully."
+    - "Fry the mushrooms in the oil until browned and dry, 6 min."
+    - "Add the bean paste and garlic and fry until the oil turns red, 1–2 min."
+    - "Add 200 ml water and the soy sauce, slide in the tofu and simmer 5 min."
+    - "Stir in the cornflour mix and cook until glossy and thick, 1 min."
+    - "Sprinkle with Sichuan pepper and spring onions. Serve with rice."
+  tip: "Nudge the tofu with the back of a spoon instead of stirring, so it stays whole."
+
+# ---------------------------------------------------------------- winter
+
+- id: "boerenkoolstamppot"
+  title: "Boerenkoolstamppot"
+  subtitle: "Mashed potato and kale with smoked sausage"
+  origin: "Netherlands"
+  serves: 4
+  time_min: 35
+  seasons: ["winter"]
+  diet: ["meat"]
+  tags: ["dutch classic", "one-pot"]
+  ingredients:
+    - {qty: "1.5 kg", item: "floury potatoes, in chunks"}
+    - {qty: "500 g", item: "curly kale, chopped"}
+    - {qty: "1", item: "rookworst (smoked sausage)"}
+    - {qty: "150 g", item: "smoked bacon lardons"}
+    - {qty: "40 g", item: "butter"}
+    - {qty: "150 ml", item: "hot milk"}
+    - {qty: "to serve", item: "mustard"}
+  steps:
+    - "Put potatoes in a large pot with salted water just to cover. Pile the kale on top."
+    - "Cover and boil until the potatoes are very tender, 20 min."
+    - "Meanwhile, heat the rookworst in hot, not boiling, water for 15 min. Fry the lardons until crisp."
+    - "Drain the pot well. Mash potatoes and kale with the butter and enough hot milk to make it smooth."
+    - "Stir in the lardons with their fat and season. Serve with sliced rookworst and mustard."
+  tip: "Make a well in each mound for gravy: the classic 'kuiltje jus'."
+
+- id: "chana-masala"
+  title: "Chana masala"
+  subtitle: "Chickpeas in a tangy onion and tomato masala"
+  origin: "North India"
+  serves: 4
+  time_min: 40
+  seasons: ["winter"]
+  diet: ["vegan"]
+  tags: ["curry", "pantry"]
+  ingredients:
+    - {qty: "3 tbsp", item: "vegetable oil"}
+    - {qty: "1 tsp", item: "cumin seeds"}
+    - {qty: "2", item: "onions, finely chopped"}
+    - {qty: "3 cloves", item: "garlic, grated"}
+    - {qty: "3 cm", item: "ginger, grated"}
+    - {qty: "2 tsp", item: "garam masala"}
+    - {qty: "½ tsp", item: "ground turmeric"}
+    - {qty: "400 g", item: "chopped tomatoes (tin)"}
+    - {qty: "2 tins", item: "chickpeas (400 g), drained"}
+  steps:
+    - "Sizzle the cumin seeds in the oil, 30 sec. Add the onions and fry until deep golden, 10–12 min."
+    - "Add garlic and ginger for 1 min, then the garam masala and turmeric for 30 sec."
+    - "Add the tomatoes and cook until the oil separates, 8 min."
+    - "Add chickpeas and 200 ml water. Simmer 10 min, mashing a few chickpeas to thicken."
+    - "Season with salt and serve with rice or flatbread."
+  tip: "Finish with lemon juice and fresh coriander. Add a green chilli for heat."
+
+- id: "erwtensoep"
+  title: "Erwtensoep"
+  subtitle: "Thick Dutch split pea soup with smoked sausage"
+  origin: "Netherlands"
+  serves: 6
+  time_min: 120
+  seasons: ["winter"]
+  diet: ["meat"]
+  tags: ["soup", "weekend", "batch"]
+  ingredients:
+    - {qty: "500 g", item: "green split peas, rinsed"}
+    - {qty: "2 l", item: "water"}
+    - {qty: "400 g", item: "pork ribs"}
+    - {qty: "1", item: "onion, chopped"}
+    - {qty: "1", item: "leek, sliced"}
+    - {qty: "2", item: "carrots, diced"}
+    - {qty: "300 g", item: "celeriac, diced"}
+    - {qty: "1", item: "rookworst (smoked sausage)"}
+    - {qty: "1 handful", item: "celery leaves, chopped"}
+  steps:
+    - "Simmer the peas and ribs in the water, lid ajar, for 1 hour. Skim off any foam."
+    - "Lift out the ribs, pull the meat off the bones, chop it and return it to the pot."
+    - "Add onion, leek, carrot and celeriac. Simmer 40 min, stirring often so it doesn't catch."
+    - "Heat the rookworst in the soup for the last 15 min, then slice it and stir it back in."
+    - "Stir in the celery leaves and season. A spoon should almost stand up in it."
+  tip: "Better the next day. Serve with rye bread and katenspek."
+
+- id: "hachee"
+  title: "Hachee"
+  subtitle: "Dutch beef and onion stew with bay and cloves"
+  origin: "Netherlands"
+  serves: 4
+  time_min: 150
+  seasons: ["winter"]
+  diet: ["meat"]
+  tags: ["stew", "weekend"]
+  ingredients:
+    - {qty: "750 g", item: "braising beef, in 4 cm cubes"}
+    - {qty: "2 tbsp", item: "plain flour"}
+    - {qty: "40 g", item: "butter"}
+    - {qty: "500 g", item: "onions, sliced"}
+    - {qty: "2", item: "bay leaves"}
+    - {qty: "3", item: "whole cloves"}
+    - {qty: "2 tbsp", item: "red wine vinegar"}
+    - {qty: "1 tbsp", item: "appelstroop or brown sugar"}
+    - {qty: "500 ml", item: "beef stock"}
+  steps:
+    - "Pat the beef dry, season and dust with flour. Brown in batches in the butter in a heavy pot."
+    - "Lower the heat, add the onions and fry until soft and golden, 15 min."
+    - "Return the beef with bay, cloves, vinegar, appelstroop and stock. Bring to a simmer."
+    - "Cover and cook on the lowest heat until the beef falls apart, about 2 hours. Stir now and then."
+    - "Remove the bay leaves and cloves, season, and serve with boiled potatoes and red cabbage."
+  tip: "Tastes even better the next day, and freezes well."

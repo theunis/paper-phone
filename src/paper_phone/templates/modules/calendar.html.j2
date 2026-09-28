@@ -1,0 +1,17 @@
+<div class="cal" style="grid-template-rows: auto repeat({{ c.weeks|length }}, 1fr)">
+  <span class="hd wk">wk</span>{% for a in c.abbr %}<span class="hd{% if loop.index > 5 %} we{% endif %}">{{ a }}</span>{% endfor %}
+  {% for w in c.weeks %}
+  <span class="wk">{{ w.number }}</span>
+  {% for d in w.days %}
+  <div class="cell{% if not d.in_month %} out{% endif %}{% if d.holiday %} hol{% endif %}{% if d.weekend %} we{% endif %}">
+    <span class="n">{{ d.date.day }}</span>
+    {% for i in d.evs %}<span class="e{% if i.kind == 'holiday' %} h{% elif i.title in c.recurring %} r{% endif %}">{{ i.title }}</span>{% endfor %}
+    {% if d.more %}<span class="e muted">+{{ d.more }}</span>{% endif %}
+  </div>
+  {% endfor %}
+  {% endfor %}
+</div>
+<div class="listed">
+  {% for i in c.listed %}<div class="li"><span class="ld">{{ c.day_abbr[i.date.weekday()][:2] }} {{ i.date.day }}</span>{% if i.start %}<span class="mono muted">{{ t_hm(i.start) }}</span> {% endif %}{% if i.kind == 'holiday' %}{{ icon("flag") }} {% endif %}{{ i.title }}</div>{% endfor %}
+  {% if c.recurring %}<div class="li rec"><span class="ld">{{ icon("repeat") }}</span>Every week: {{ c.recurring|join(" · ") }}</div>{% endif %}
+</div>

@@ -1,0 +1,12 @@
+<div class="itin{% if c.compact %} compact{% endif %}">
+  {% for d in c.days %}
+  <div class="iday">
+    <div class="ih"><span class="in">Day {{ d.n }}</span><span class="il">{{ d.label }}</span>{% if d.wx %}<span class="iw">{{ icon(d.wx.icon) }} {{ temp(d.wx.tmax) }}<span class="muted">/{{ temp(d.wx.tmin) }}</span></span>{% endif %}</div>
+    {% for i in d.evs %}
+    <div class="ii k-{{ i.kind }}">{% if i.kind == 'transport' %}{{ icon("plane") }}{% elif i.kind == 'holiday' %}{{ icon("flag") }}{% else %}<i class="dot"></i>{% endif %}{% if i.start %}<span class="mono">{{ t_hm(i.start) }}</span>{% endif %}<span><b>{{ i.title }}</b>{% if i.location %} <span class="muted">{{ i.location }}</span>{% endif %}</span></div>
+    {% endfor %}
+    {% if not d.evs %}<div class="ii blank"><i class="dot"></i><span class="wline"></span></div>{% endif %}
+  </div>
+  {% endfor %}
+  <div class="fill">{{ ruled(4.4) }}</div>
+</div>

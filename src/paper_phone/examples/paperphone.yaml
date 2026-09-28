@@ -1,0 +1,86 @@
+# Paper Phone configuration. Everything is optional; delete what you don't use.
+# Build with:  paper-phone build daily   (or weekly, monthly, travel, or `paper-phone all`)
+
+owner:
+  name: "Your Name"            # printed in the "if found, please return to" line
+  phone: "+31 6 1234 5678"
+
+home:
+  query: "Oudwijk, Utrecht, Netherlands"   # any address or place OpenStreetMap can find
+work:
+  query: "Jaarbeursplein, Utrecht"
+# city:                        # centre of the big map (default: your home town)
+#   query: "Domplein, Utrecht"
+
+country: "NL"                  # public holidays
+paper: a4                      # a4 or letter
+back: maps                     # maps | poster (one big map) | blank (single-sided)
+
+language:
+  learn: es                    # es fr it de pt ja
+  native: en                   # en or nl (translations)
+
+calendars:
+  - calendar.ics               # local .ics files or https:// links (e.g. a Google Calendar "secret address")
+
+events:
+  - {title: "Dentist", date: 2026-09-30, start: "08:30", end: "09:00", location: "Biltstraat"}
+
+tasks_file: tasks.md           # "- [ ] Call the plumber due:2026-09-30 ! #home"
+tasks:
+  - {title: "Book train to Lisbon", priority: true}
+
+habits: ["Phone-free morning", "Move 30 min", "Read 20 pages", "In bed by 23:00"]
+
+contacts:
+  - {name: "Sam", phone: "+31 6 8765 4321", note: "partner"}
+  - {name: "GP", phone: "030 123 4567"}
+
+recipes:
+  diet: any                    # any, vegetarian, vegan, pescatarian
+
+training:
+  name: "Half marathon"
+  start: 2026-09-07            # Monday of plan week 1
+  goal: {name: "Half marathon", date: 2026-10-18}
+  weekly:                      # fallback when a week is not in the plan
+    mon: rest
+    tue: {title: "Easy run", distance_km: 6}
+    thu: {title: "Tempo run", distance_km: 8, intensity: moderate}
+    sat: {title: "Long run", distance_km: 14}
+  plan:
+    - {mon: rest, tue: {title: "Easy run", distance_km: 6}, wed: {title: "Strength", type: strength, duration_min: 30}, thu: {title: "Intervals", distance_km: 8, intensity: hard, detail: "6 × 800 m at 5K pace, 90 s jog"}, sat: {title: "Long run", distance_km: 14}, sun: rest}
+    - {mon: rest, tue: {title: "Easy run", distance_km: 7}, wed: {title: "Strength", type: strength, duration_min: 30}, thu: {title: "Tempo run", distance_km: 9, intensity: moderate, detail: "2 km easy, 5 km at half-marathon pace, 2 km easy"}, sat: {title: "Long run", distance_km: 16}, sun: rest}
+    - {mon: rest, tue: {title: "Easy run", distance_km: 7}, wed: {title: "Yoga", type: yoga, duration_min: 30}, thu: {title: "Intervals", distance_km: 9, intensity: hard, detail: "5 × 1 km at 10K pace, 2 min jog"}, sat: {title: "Long run", distance_km: 18}, sun: rest}
+    - {mon: {title: "Mobility", type: yoga, duration_min: 20}, tue: {title: "Easy run", distance_km: 8, detail: "Relaxed, finish with 4 strides"}, wed: {title: "Strength", type: strength, duration_min: 30, detail: "Squats, lunges, calf raises, planks"}, thu: {title: "Tempo run", distance_km: 10, intensity: moderate, detail: "2 km easy, 6 km at half-marathon pace, 2 km easy"}, fri: rest, sat: {title: "Long run", distance_km: 16, detail: "Last 3 km at goal pace"}, sun: {title: "Recovery walk", type: walk, duration_min: 40}}
+    - {mon: rest, tue: {title: "Easy run", distance_km: 6}, thu: {title: "Race-pace run", distance_km: 7, intensity: moderate, detail: "3 × 2 km at goal pace, 2 min jog"}, sat: {title: "Long run", distance_km: 12}, sun: rest}
+    - {mon: rest, tue: {title: "Easy run", distance_km: 5}, thu: {title: "Shake-out", distance_km: 4, detail: "Easy, with 4 strides"}, fri: rest, sat: {title: "Rest & carb up", type: rest}, sun: {title: "Half marathon", type: race, distance_km: 21.1, intensity: race}}
+
+trip:                          # used by the travel edition
+  destination: "Lisbon, Portugal"
+  start: 2026-10-12
+  end: 2026-10-16
+  stay:
+    name: "Casa do Bairro"
+    query: "Rua da Rosa 100, Lisboa"
+  transport:
+    - {date: 2026-10-12, time: "09:40", title: "Flight AMS → LIS", detail: "Terminal 2 · seat 14C"}
+    - {date: 2026-10-16, time: "18:05", title: "Flight LIS → AMS"}
+  itinerary:
+    2026-10-12: ["Check in, walk to Miradouro de São Pedro de Alcântara"]
+    2026-10-13: ["Tram 28 early", "Alfama & castle", "Dinner in Mouraria"]
+    2026-10-14: ["Belém: tower & pastéis", "LX Factory"]
+    2026-10-15: ["Day trip to Sintra (train from Rossio)"]
+  places:
+    - {name: "Castelo de São Jorge", query: "Castelo de São Jorge, Lisboa"}
+    - {name: "Time Out Market", query: "Time Out Market Lisboa"}
+    - {name: "Miradouro da Senhora do Monte", query: "Miradouro Senhora do Monte, Lisboa"}
+    - {name: "Praça do Comércio", query: "Praça do Comércio, Lisboa"}
+  packing: ["Sunglasses", "Light scarf"]
+
+# Change the page order per edition (exactly 8 pages; a pair shares a page):
+# pages:
+#   daily: [cover, agenda, weather, tasks, training, [words, sudoku], recipe, notes]
+# Available modules: cover agenda week calendar itinerary weather tasks training
+#   words phrases recipe notes habits expenses packing practical places nearby
+#   sudoku prompts

@@ -1,0 +1,10 @@
+{% if c.missing %}
+<div class="empty">{{ icon("message-circle") }}<p>No phrasebook for “{{ c.missing }}” yet.<br>Available: {{ c.available|join(", ") }}.</p></div>
+{% else %}
+{% for s in c.sections %}
+<p class="label{% if not loop.first %} sp{% endif %}">{{ s.title }}</p>
+{% for p in s.phrases %}
+<div class="phr"><span class="pp">{{ p.phrase }}</span><span class="pm">{{ p.meaning }}</span><span class="ps">{{ p.say }}</span></div>
+{% endfor %}
+{% endfor %}
+{% endif %}

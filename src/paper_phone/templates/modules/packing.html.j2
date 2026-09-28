@@ -1,0 +1,5 @@
+<div class="packing">
+  {% for g in c.groups %}
+  <div class="pg"><p class="label">{{ g.title }}</p>{% for item in g["items"] %}<div class="pi"><span class="box"></span>{{ item }}</div>{% endfor %}</div>
+  {% endfor %}
+</div>

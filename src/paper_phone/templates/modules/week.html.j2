@@ -1,0 +1,12 @@
+<div class="days">
+  {% for d in c.days %}
+  <div class="dayrow{% if d.weekend %} weekend{% endif %}{% if d.holiday %} hol{% endif %}">
+    <div class="dd"><span class="dn">{{ d.date.day }}</span><span class="da">{{ d.abbr }}</span></div>
+    <div class="di">
+      {% for i in d.evs %}<div class="it">{% if i.start %}<span class="mono">{{ t_hm(i.start) }}</span> {% endif %}{% if i.kind == 'holiday' %}{{ icon("flag") }} {% endif %}{{ i.title }}</div>{% endfor %}
+      {% if d.more %}<div class="it muted">+{{ d.more }} more</div>{% endif %}
+    </div>
+    <div class="dw">{% if d.wx %}{{ icon(d.wx.icon) }}<b>{{ temp(d.wx.tmax) }}</b><span class="muted">{{ temp(d.wx.tmin) }}</span>{% endif %}</div>
+  </div>
+  {% endfor %}
+</div>

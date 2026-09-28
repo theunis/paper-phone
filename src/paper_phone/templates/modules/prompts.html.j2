@@ -1,0 +1,4 @@
+<div class="prompts">
+  {% for label, text in c.entries %}<div class="pr"><span class="label">{{ label }}</span><span class="pt">{{ text }}</span></div>{% endfor %}
+</div>
+{% if page.size == 'full' %}<div class="fill">{{ ruled(5) }}</div>{% endif %}

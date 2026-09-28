@@ -1,0 +1,22 @@
+{% if c.view == 'week' %}
+<div class="hweek">
+  <span></span>{% for d in c.days %}<span class="hd">{{ c.day_abbr[d.weekday()][:1] }}<br><small>{{ d.day }}</small></span>{% endfor %}
+  {% for h in c.habits %}
+  <span class="hn">{{ h }}</span>{% for d in c.days %}<span class="hc"><i></i></span>{% endfor %}
+  {% endfor %}
+</div>
+<p class="label sp">Notes</p>
+<div class="fill">{{ dots(4) }}</div>
+{% else %}
+{% for block in c.blocks %}
+<div class="hmonth" style="grid-template-columns: 15mm repeat({{ block|length }}, 1fr)">
+  <span></span>{% for d in block %}<span class="hd{% if d.weekday() >= 5 %} we{% endif %}">{{ d.day }}</span>{% endfor %}
+  {% for h in c.habits %}
+  <span class="hn">{{ h }}</span>{% for d in block %}<span class="hc{% if d.weekday() >= 5 %} we{% endif %}"><i></i></span>{% endfor %}
+  {% endfor %}
+</div>
+{% endfor %}
+<p class="label">Notes</p>
+<div class="fill">{{ dots(4) }}</div>
+{% endif %}
+{{ macros.contacts_strip(c.contacts) }}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" data-mode="{{ mode }}">
+<head>
+<meta charset="utf-8">
+<title>Paper Phone · {{ data.edition }} · {{ data.date.isoformat() }}</title>
+<base href="{{ asset_base }}">
+<style>{{ fonts_css }}</style>
+<style>
+@page { size: {{ sheet.width }}mm {{ sheet.height }}mm; margin: 0; }
+:root { --sheet-w: {{ sheet.width }}mm; --sheet-h: {{ sheet.height }}mm; --pw: {{ sheet.panel_w }}mm; --ph: {{ sheet.panel_h }}mm; }
+{{ css }}
+</style>
+</head>
+<body>
+{% if front %}
+<section class="sheet front">
+  {% for s in slots %}
+  <div class="slot{% if s.rotated %} rot{% endif %}" style="left: {{ s.x }}mm; top: {{ s.y }}mm">{{ s.html }}</div>
+  {% endfor %}
+  <svg class="cutline" viewBox="0 0 {{ sheet.width }} {{ sheet.height }}" width="{{ sheet.width }}mm" height="{{ sheet.height }}mm">
+    <line x1="{{ sheet.panel_w + 1.5 }}" x2="{{ sheet.panel_w * 3 - 1.5 }}" y1="{{ sheet.panel_h }}" y2="{{ sheet.panel_h }}" />
+    <g transform="translate({{ sheet.panel_w - 1.6 }} {{ sheet.panel_h - 1.5 }}) scale(.125)">{{ scissors }}</g>
+  </svg>
+</section>
+{% endif %}
+{% if back %}<section class="sheet back">{{ back }}</section>{% endif %}
+<script>{{ fill_js }}</script>
+</body>
+</html>

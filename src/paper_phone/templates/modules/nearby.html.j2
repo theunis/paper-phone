@@ -1,0 +1,10 @@
+{% if c.listed %}
+<p class="label">Plan to see <span class="muted">· map {{ c.centre_title }}</span></p>
+{% for p in c.listed %}<div class="pl"><span class="pn">{{ p.n }}</span><span class="pt"><b>{{ p.name }}</b>{% if p.note %} <span class="muted">{{ p.note }}</span>{% endif %}</span><span class="pr">{{ p.ref or "" }}</span></div>{% endfor %}
+{% endif %}
+{% if c.nearby %}
+<p class="label{% if c.listed %} sp{% endif %}">Nearby <span class="muted">· map {{ c.detail_title }}</span></p>
+{% for p in c.nearby %}<div class="pl"><span class="pi">{{ icon(p.icon) }}</span><span class="pt"><b>{{ p.name }}</b> <span class="muted">{{ p.kind }}</span></span><span class="pr">{{ p.walk }}′ · {{ p.ref }}</span></div>{% endfor %}
+{% endif %}
+<div class="fill">{{ ruled(4.6) }}</div>
+{% if c.qr and page.size == 'full' %}<div class="qr">{{ c.qr }}<span>Scan at home for the digital map.<br>Walking times are estimates.</span></div>{% endif %}

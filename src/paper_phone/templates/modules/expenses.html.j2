@@ -1,0 +1,6 @@
+<div class="xp">
+  <span class="xh">Day</span><span class="xh">What</span><span class="xh r">{{ c.currency }}</span>
+  {% for i in range(c.rows) %}<span class="xc"></span><span class="xc"></span><span class="xc"></span>{% endfor %}
+  <span class="xt">Total</span><span></span><span class="xc tot"></span>
+</div>
+{{ macros.contacts_strip(c.contacts) }}

@@ -1,0 +1,50 @@
+{% if c.view == 'day' %}
+{% set s = c.today %}
+<div class="session{% if not s or s.type == 'rest' %} rest{% endif %}">
+  <div class="sh"><span class="sic">{{ icon(c.icon_for(s)) }}</span><span class="stype">{{ (s.type if s else 'rest')|upper }}{% if s and s.intensity %} · {{ s.intensity }}{% endif %}</span></div>
+  <div class="title">{{ s.title if s else "Rest day" }}</div>
+  {% if s and c.summary(s) %}<div class="sum">{{ c.summary(s) }}</div>{% endif %}
+  {% if s and s.detail %}<div class="detail">{{ s.detail }}</div>{% endif %}
+  {% if not s or s.type == 'rest' %}<div class="detail">Walk, stretch, sleep early. Recovery is training too.</div>{% endif %}
+</div>
+<div class="log">
+  <div class="f">Time</div><div class="f">Distance</div><div class="f">Avg HR</div>
+  <div class="f feel-f">Feel <span class="feel"><i></i><i></i><i></i><i></i><i></i></span></div>
+</div>
+<p class="label sp">This week</p>
+<div class="wk">
+  {% for d in c.week %}
+  <div class="wk-row{% if d.today %} today{% endif %}{% if d.past %} past{% endif %}">
+    <span class="wa">{{ d.abbr }}</span><span class="wi">{{ icon(c.icon_for(d.s)) }}</span><span class="wt">{{ d.s.title if d.s else "Rest" }}</span><span class="ws">{{ c.summary(d.s) }}</span><span class="box"></span>
+  </div>
+  {% endfor %}
+</div>
+<div class="fill notes-fill">{{ ruled(4.6) }}</div>
+{% elif c.view == 'week' %}
+<div class="wk big">
+  {% for r in c.rows %}
+  <div class="wk-row tall">
+    <span class="wa">{{ r.abbr }}<br><small>{{ r.date.day }}</small></span><span class="wi">{{ icon(c.icon_for(r.s)) }}</span>
+    <span class="wt"><b>{{ r.s.title if r.s else "Rest" }}</b>{% if r.s and c.summary(r.s) %} <span class="muted">{{ c.summary(r.s) }}</span>{% endif %}{% if r.s and r.s.detail %}<br><span class="wdet">{{ r.s.detail }}</span>{% endif %}</span>
+    <span class="box big"></span>
+  </div>
+  {% endfor %}
+</div>
+<div class="totals">{% if c.km %}<span><b>{{ '%g' % c.km }}</b> km planned</span>{% endif %}{% if c.mins %}<span><b>{{ c.mins }}</b> min</span>{% endif %}<span>Done: ____ km</span></div>
+{% else %}
+<div class="tgrid">
+  <span class="hd">wk</span>{% for a in c.abbr %}<span class="hd">{{ a }}</span>{% endfor %}<span class="hd">km</span>
+  {% for w in c.weeks %}
+  <span class="wk-n">{{ w.number }}</span>
+  {% for cell in w.cells %}<span class="tc{% if not cell.in_month %} out{% endif %}{% if cell.s and cell.s.type == 'rest' %} rest{% endif %}"><i>{{ cell.date.day }}</i>{{ c.short(cell.s) }}</span>{% endfor %}
+  <span class="wk-km">{{ '%g' % w.km if w.km else '' }}</span>
+  {% endfor %}
+</div>
+<p class="label sp">Notes</p>
+<div class="fill">{{ ruled(4.6) }}</div>
+{% endif %}
+{% if c.goal %}
+<div class="goal"><span><span class="label">Goal</span><b>{{ c.goal.name }}</b><br><span class="muted">{{ d_short(c.goal.date) }}</span></span><span class="n">{{ c.goal.days }}<small> days</small></span></div>
+{% elif c.fallback %}
+<p class="tiny muted hint">Add your own plan under <span class="mono">training:</span> in the config.</p>
+{% endif %}

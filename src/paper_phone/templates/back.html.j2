@@ -1,0 +1,31 @@
+{% for m in maps %}
+<div class="mapbox" style="left: {{ m.box.x }}mm; top: {{ m.box.y }}mm; width: {{ m.box.w }}mm; height: {{ m.box.h }}mm">{{ m.svg }}</div>
+{% endfor %}
+{% if not maps %}
+<div class="nomaps">{{ icon("map") }}<p>Maps unavailable (offline?).<br>Draw your own.</p></div>
+{% endif %}
+{% if info %}
+<div class="info" style="left: {{ info.x }}mm; top: {{ info.y }}mm; width: {{ info.w }}mm; height: {{ info.h }}mm">
+  <div class="brand"><span class="app" style="--accent: var(--c-cover)">{{ icon("sparkles") }}</span><span><b>Paper Phone</b><br><span class="muted">{{ edition_label }}</span></span></div>
+  <p class="label">How to fold</p>
+  {{ fold_svg }}
+  <ol class="howto">
+    <li><span>Print at <b>100&nbsp;%</b> (actual size). Maps go on the back.</span></li>
+    <li><span>Fold in half, short edges together. Cut along the dashed line: from the fold to the next crease.</span></li>
+    <li><span>Open it. Fold it the long way, pages outside.</span></li>
+    <li><span>Push the ends together so the cut opens into a diamond. Flatten with page&nbsp;1 on top.</span></li>
+  </ol>
+  <p class="label">Legend</p>
+  <div class="legend">
+    {% for kind, ic, color, label in legend %}<span><i class="lg" style="--lg: {{ color }}">{{ icon(ic) }}</i>{{ label }}</span>{% endfor %}
+  </div>
+  {% if solution %}
+  <div class="solution"><p class="label">Sudoku solution</p>
+    <div class="sol">{% for row in solution %}{% for v in row %}<span>{{ v }}</span>{% endfor %}{% endfor %}</div>
+  </div>
+  {% endif %}
+  <p class="credits">Map data © OpenStreetMap contributors (ODbL) · Weather Open-Meteo.com{% if rates %} · Rates ECB{% endif %}<br>Printed {{ printed }}</p>
+</div>
+{% elif maps %}
+<p class="credits poster-credits">Map data © OpenStreetMap contributors (ODbL) · Printed {{ printed }}</p>
+{% endif %}

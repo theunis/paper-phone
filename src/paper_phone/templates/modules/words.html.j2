@@ -1,0 +1,31 @@
+{% if c.view in ('one', 'day') %}
+<div class="wotd">
+  {% if c.view == 'day' %}<p class="label">Word of the day</p>{% endif %}
+  <div class="w">{{ c.w.word }}</div>
+  <div class="say"><span class="pos">{{ c.w.pos }}</span> · {{ c.w.say }}</div>
+  <div class="mean">{{ c.w.meaning }}</div>
+  {% if c.w.example %}<div class="ex">{{ c.w.example }}{% if c.w.example_romaji %}<span class="rom">{{ c.w.example_romaji }}</span>{% endif %}<span class="tr">{{ c.w.example_meaning }}</span></div>{% endif %}
+</div>
+{% if c.view == 'one' %}
+{% for m in c.more %}<div class="wrow also"><span class="ww">{{ m.word }}</span><span class="wm">{{ m.meaning }}</span><span class="wsay">{{ m.say }}</span></div>{% endfor %}
+{% endif %}
+{% if c.view == 'day' %}
+<p class="label sp">Also today</p>
+{% for m in c.more %}
+<div class="wrow"><span class="ww">{{ m.word }}</span><span class="wm">{{ m.meaning }}</span><span class="wsay">{{ m.say }}</span></div>
+{% endfor %}
+<div class="quiz"><span class="label">Yesterday: do you remember?</span><span class="qw">{{ c.quiz.word }}</span><span class="qa">{{ c.quiz.meaning }}</span></div>
+{% endif %}
+{% else %}
+<div class="wlist{% if c.view == 'month' %} month{% endif %}">
+  {% for w in c.list %}
+  <div class="wrow">
+    {% if w.abbr %}<span class="wd">{{ w.abbr[:2] }}</span>{% endif %}
+    <span class="ww">{{ w.word }}</span><span class="wm">{{ w.meaning }}</span>
+    <span class="wsay">{{ w.say }}</span>
+    {% if c.view == 'week' and w.example %}<span class="wex">{{ w.example }}</span>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+<p class="tiny muted hint">Fold the right edge over to test yourself.</p>
+{% endif %}

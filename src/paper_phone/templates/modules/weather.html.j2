@@ -1,0 +1,65 @@
+{% if c.missing %}
+<div class="empty">{{ icon("cloud") }}<p>No forecast available for these dates.<br>Look out of the window, then write it here.</p></div>
+<div class="fill">{{ ruled(5) }}</div>
+{% elif c.view == 'day' %}
+{% set t = c.today %}
+<div class="wx-hero">
+  <span class="wx-big">{{ icon(t.icon) }}</span>
+  <div class="wx-temps"><span class="hi">{{ temp(t.tmax) }}</span><span class="lo">{{ temp(t.tmin) }}</span></div>
+  <div class="wx-desc"><b>{{ t.label }}</b><br><span class="muted">Feels {{ temp(c.feels[0]) }} to {{ temp(c.feels[1]) }}</span></div>
+</div>
+<div class="wx-chartbox">{{ c.chart }}</div>
+<div class="stats">
+  <div class="stat"><span class="k">{{ icon("sunrise") }} Rise</span><span class="v">{{ t_hm(t.sunrise) }}</span></div>
+  <div class="stat"><span class="k">{{ icon("sunset") }} Set</span><span class="v">{{ t_hm(t.sunset) }}</span></div>
+  <div class="stat"><span class="k">{{ icon("clock") }} Light</span><span class="v">{{ duration(t.daylight_s) }}</span></div>
+  <div class="stat"><span class="k">{{ icon("umbrella") }} Rain</span><span class="v">{{ '%.1f' % t.precip }} mm{% if t.precip_prob is not none %} <small>{{ t.precip_prob }}%</small>{% endif %}</span></div>
+  <div class="stat"><span class="k">{{ icon("wind") }} Wind</span><span class="v">{{ t.beaufort }} Bft <small>{{ t.wind_compass }}</small></span></div>
+  <div class="stat"><span class="k">{{ icon("sun") }} UV</span><span class="v">{{ '%.0f' % (t.uv or 0) }}</span></div>
+</div>
+<div class="advice">{% for ic, text in c.advice %}<span class="chip">{{ icon(ic) }} {{ text }}</span>{% endfor %}</div>
+<div class="next">
+  {% for d in c.next %}<div class="nd"><span class="na">{{ d_short(d.date)[:3] }}</span>{{ icon(d.icon) }}<b>{{ temp(d.tmax) }}</b><span class="muted">{{ temp(d.tmin) }}</span></div>{% endfor %}
+  <div class="nd moon">{{ moon_svg(c.moon, 3.6) }}<span class="muted">{{ c.moon.name }}</span></div>
+</div>
+{% else %}
+{% if c.too_far %}
+<div class="normals-hero">
+  <p class="label">Typical for these dates</p>
+  {% if c.normals %}
+  <div class="nh"><span class="hi">{{ temp(c.normals.tmax) }}</span><span class="lo">{{ temp(c.normals.tmin) }}</span></div>
+  <p>Rain on {{ '%.0f' % c.normals.wet_days_pct }}% of days · {{ '%.1f' % c.normals.precip_mm_per_day }} mm/day{% if c.normals.sunshine_h %} · {{ '%.0f' % c.normals.sunshine_h }} h sun{% endif %}</p>
+  <p class="muted">Average of the last {{ c.normals.years }} years. The forecast reaches 16 days ahead; print again closer to the trip.</p>
+  {% else %}<p class="muted">No forecast yet for these dates.</p>{% endif %}
+</div>
+{% else %}
+<div class="ranges{% if c.compact %} compact{% endif %}{% if c.rows|length < 5 %} few{% endif %}">
+  {% for r in c.rows %}
+  <div class="range-row{% if r.weekend %} weekend{% endif %}{% if r.typical %} typical{% endif %}">
+    <span class="rd">{{ r.abbr[:2] }} <b>{{ r.day.date.day }}</b></span>
+    <span class="ri">{{ icon(r.day.icon) }}</span>
+    <span class="rl">{{ temp(r.day.tmin) }}</span>
+    <span class="bar"><i style="left: {{ '%.1f' % r.left }}%; width: {{ '%.1f' % r.width }}%"></i></span>
+    <span class="rh">{{ temp(r.day.tmax) }}</span>
+    <span class="rr">{% if r.day.precip >= 0.1 %}{{ icon("droplets") }}{{ '%.0f' % r.day.precip if r.day.precip >= 1 else '<1' }}{% endif %}</span>
+    {% if not c.compact %}<span class="rx">{% if r.typical %}Typical for the date · rain on {{ r.day.precip_prob }}% of days{% else %}{{ r.day.label }}{% if r.day.precip_prob %} · rain {{ r.day.precip_prob }}%{% endif %} · wind {{ r.day.beaufort }} Bft {{ r.day.wind_compass }}{% if r.day.uv %} · UV {{ '%.0f' % r.day.uv }}{% endif %}{% endif %}</span>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% if c.outlook_note %}<p class="tiny muted">{{ c.outlook_note }}</p>{% endif %}
+{% if c.has_typical %}<p class="tiny muted">Grey rows: typical weather (10-year average); the forecast reaches 16 days ahead. Print again closer to the trip.</p>{% endif %}
+{% endif %}
+{% if c.normals and not c.too_far %}
+<div class="normals"><span class="label">Normal for {{ month_name(data.date) }}</span>
+  <span>{{ icon("thermometer") }} {{ temp(c.normals.tmax) }} / {{ temp(c.normals.tmin) }}</span>
+  <span>{{ icon("droplets") }} {{ '%.0f' % c.normals.wet_days_pct }}% wet days</span>
+  {% if c.normals.sunshine_h %}<span>{{ icon("sun") }} {{ '%.1f' % c.normals.sunshine_h }} h/day</span>{% endif %}
+</div>
+{% endif %}
+<div class="sunbox">
+  {% if c.first %}<div><span class="k">{{ icon("sunrise") }} {{ d_short(c.first.date) }}</span> {{ t_hm(c.first.sunrise) }} – {{ t_hm(c.first.sunset) }}</div>{% endif %}
+  {% if c.last and c.last != c.first %}<div><span class="k">{{ icon("sunset") }} {{ d_short(c.last.date) }}</span> {{ t_hm(c.last.sunrise) }} – {{ t_hm(c.last.sunset) }}</div>{% endif %}
+  {% for day, name in c.phases %}<div><span class="k">{{ moon_svg(moon(day), 2.6) }} {{ d_short(day) }}</span> {{ name }}</div>{% endfor %}
+</div>
+{% if c.advice %}<div class="advice">{% for ic, text in c.advice %}<span class="chip">{{ icon(ic) }} {{ text }}</span>{% endfor %}</div>{% endif %}
+{% endif %}

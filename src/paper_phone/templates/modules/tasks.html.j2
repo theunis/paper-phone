@@ -1,0 +1,14 @@
+{% if c.goals %}
+<p class="label">Goals this month</p>
+{% for i in range(3) %}<div class="task goal"><span class="gn">{{ i + 1 }}</span><span class="wline"></span></div>{% endfor %}
+<p class="label sp">To do</p>
+{% elif page.size == 'full' %}<p class="label">Top three</p>{% endif %}
+{% if not c.goals %}
+{% for t in c.top %}<div class="task top"><span class="box big"></span><span class="tt">{{ t.title }}</span>{% if t.due %}<span class="due{% if t.due < c.start %} late{% endif %}">{{ d_short(t.due) }}</span>{% endif %}</div>{% endfor %}
+{% for i in range(c.top_blank) %}<div class="task top"><span class="box big"></span><span class="wline"></span></div>{% endfor %}
+{% if page.size == 'full' %}<p class="label sp">Also</p>{% endif %}
+{% else %}
+{% for t in c.top %}<div class="task"><span class="box"></span><span class="tt"><b>{{ t.title }}</b></span>{% if t.due %}<span class="due">{{ d_short(t.due) }}</span>{% endif %}</div>{% endfor %}
+{% endif %}
+{% for t in c.rest %}<div class="task"><span class="box"></span><span class="tt">{{ t.title }}{% for tag in t.tags %} <span class="tag">#{{ tag }}</span>{% endfor %}</span>{% if t.due %}<span class="due{% if t.due < c.start %} late{% endif %}">{{ d_short(t.due) }}</span>{% endif %}</div>{% endfor %}
+<div class="fill">{{ checklist(4.7) }}</div>

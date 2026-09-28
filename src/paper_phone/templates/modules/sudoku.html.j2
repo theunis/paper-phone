@@ -1,0 +1,3 @@
+<div class="sudoku-wrap">
+  <div class="sudoku">{% for row in c.grid %}{% for v in row %}<span>{{ v if v else '' }}</span>{% endfor %}{% endfor %}</div>
+</div>

@@ -1,0 +1,7 @@
+<article class="page m-{{ m.key }}{% if n == 1 %} is-cover{% endif %}" style="--accent: var(--c-{{ m.color }})">
+  {% if m.key != 'cover' %}
+  <header class="ph"><span class="app">{{ icon(m.icon) }}</span><span class="ph-title">{{ m.title }}</span>{% if c.meta %}<span class="ph-meta">{{ c.meta }}</span>{% endif %}</header>
+  {% endif %}
+  <div class="pc">{% include "modules/" ~ m.key ~ ".html.j2" %}</div>
+  <footer class="pf"><span>{{ footer }}</span><span class="folio">{{ n }}</span></footer>
+</article>

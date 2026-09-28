@@ -1,0 +1,24 @@
+<div class="sos-big">{{ icon("siren") }}<span><span class="k">Emergency</span><span class="n">{{ c.emergency }}</span></span>
+  {% if c.services %}<span class="others">{% for label, num in c.services %}<span>{{ label }} <b>{{ num }}</b></span>{% endfor %}</span>{% endif %}
+</div>
+{% if c.money %}
+<p class="label sp">Money · 1 {{ c.base }} = {{ '%.4g' % c.rate }} {{ c.quote }}</p>
+<div class="money">{% for a, b in c.money %}<span class="ma">{{ a }} {{ c.base }}</span><span class="mb">{{ b }} {{ c.quote }}</span>{% endfor %}</div>
+{% endif %}
+<div class="kv">
+  {% if not c.money %}<span class="ki">{{ icon("coins") }}</span><span class="k">Money</span><span>{{ c.quote }}{% if c.quote == c.base %}, same as home{% endif %}</span>{% endif %}
+  {% if c.offset %}<span class="ki">{{ icon("clock") }}</span><span class="k">Time</span><span>{{ c.offset }}</span>{% endif %}
+  {% if c.c.plugs %}<span class="ki">{{ icon("plug") }}</span><span class="k">Power</span><span>Type {{ c.c.plugs|join("/") }} · {{ c.c.voltage }}{% if not c.same_plugs %} · <b>adapter</b>{% endif %}</span>{% endif %}
+  {% if c.c.drives %}<span class="ki">{{ icon("car") }}</span><span class="k">Traffic</span><span>Drives on the {{ c.c.drives }}</span>{% endif %}
+  {% if c.c.tipping %}<span class="ki">{{ icon("banknote") }}</span><span class="k">Tipping</span><span>{{ c.c.tipping }}</span>{% endif %}
+  {% if c.c.tap_water %}<span class="ki">{{ icon("droplet") }}</span><span class="k">Water</span><span>{{ c.c.tap_water }}</span>{% endif %}
+  {% if c.c.calling_code %}<span class="ki">{{ icon("phone") }}</span><span class="k">Calling</span><span>{{ c.c.calling_code }}</span>{% endif %}
+  {% if c.c.good_to_know %}<span class="ki">{{ icon("lightbulb") }}</span><span class="k">Tip</span><span>{{ c.c.good_to_know }}</span>{% endif %}
+</div>
+{% if c.numbers %}
+<p class="label sp">Numbers · {{ c.numbers_lang }}</p>
+<div class="numbers">{% for n in c.numbers %}<span><b>{{ n.n }}</b> {{ n.word }}<small>{{ n.say }}</small></span>{% endfor %}</div>
+{% endif %}
+{% if c.stay %}
+<div class="staybox"><span class="label">Your stay</span><b>{{ c.stay.name or "Accommodation" }}</b><br>{{ c.stay_geo.display.split(", ")[:4]|join(", ") if c.stay_geo else c.stay.query }}{% if c.stay.note %}<br><span class="muted">{{ c.stay.note }}</span>{% endif %}</div>
+{% endif %}

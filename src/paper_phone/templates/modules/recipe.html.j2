@@ -1,0 +1,11 @@
+{% set r = c.r %}
+<div class="recipe">
+  <h2>{{ r.title }}</h2>
+  <p class="subt">{{ r.subtitle }}</p>
+  <div class="rmeta"><span class="chip">{{ icon("clock") }} {{ r.time_min }} min</span><span class="chip">{{ icon("utensils") }} {{ r.serves }}</span>{% for d in r.diet %}<span class="chip">{{ icon("leaf") if d in ('vegan', 'vegetarian') else icon("chef-hat") }} {{ d }}</span>{% endfor %}</div>
+  <p class="label">Shopping list</p>
+  <ul class="ingr{% if c.two_col %} two{% endif %}">{% for i in r.ingredients %}<li><span class="box"></span><span><span class="q">{{ i.qty }}</span> {{ i.item }}</span></li>{% endfor %}</ul>
+  <p class="label sp">Method</p>
+  <ol class="steps">{% for s in r.steps %}<li><span>{{ s }}</span></li>{% endfor %}</ol>
+  {% if r.tip %}<p class="tip">{{ icon("lightbulb") }} {{ r.tip }}</p>{% endif %}
+</div>

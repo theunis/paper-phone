@@ -1,0 +1,35 @@
+<div class="status"><span>{{ icon("plane") }} Offline</span><span class="brand">PAPER PHONE</span><span>100% <i class="battery"></i></span></div>
+<div class="hero{% if c.big_word %} word{% endif %}">
+  <div class="kicker">{{ c.kicker }}</div>
+  <div class="hero-num{% if c.big_word %} word{% if c.big|length > 8 %} long{% endif %}{% endif %}">{{ c.big }}</div>
+  <div class="sub">{{ c.sub }}</div>
+  {% if c.line %}<div class="line">{{ c.line }}</div>{% endif %}
+  {% if c.progress %}<div class="progress"><i style="width: {{ '%.1f' % (c.progress * 100) }}%"></i></div>{% endif %}
+</div>
+{% if data.edition == 'daily' and c.today %}
+<div class="glance">
+  <span class="gi">{{ icon(c.today.icon) }}</span>
+  <span class="gt"><b>{{ temp(c.today.tmax) }}</b><span class="muted"> / {{ temp(c.today.tmin) }}</span></span>
+  <span class="gd">{{ c.today.label }}<br><span class="muted">{{ icon("sunrise") }} {{ t_hm(c.today.sunrise) }} · {{ icon("sunset") }} {{ t_hm(c.today.sunset) }}</span></span>
+  <span class="gm">{{ moon_svg(c.moon, 5.2) }}</span>
+</div>
+{% elif data.edition in ('weekly', 'travel') and c.strip %}
+<div class="glance strip">
+  {% for s in c.strip %}<span class="sd{% if s.day and s.day.typical %} typ{% endif %}"><span class="sa">{{ s.abbr }}</span>{% if s.day %}{{ icon(s.day.icon) }}<b>{{ '~' if s.day.typical }}{{ temp(s.day.tmax) }}</b>{% else %}<span class="muted">–</span>{% endif %}</span>{% endfor %}
+</div>
+{% elif data.edition == 'monthly' and c.facts %}
+<ul class="facts">{% for f in c.facts %}<li>{{ f }}</li>{% endfor %}</ul>
+{% endif %}
+{% if data.edition == 'travel' %}
+<div class="trip">
+  {% if c.countdown %}<span class="chip">{{ icon("plane") }} {{ c.countdown }}</span>{% endif %}
+  {% for leg in c.legs %}<div class="leg"><span class="mono">{{ leg.time or "" }}</span> <b>{{ leg.title }}</b>{% if leg.detail %} <span class="muted">{{ leg.detail }}</span>{% endif %}</div>{% endfor %}
+  {% if c.stay %}<div class="leg">{{ icon("bed-double") }} <b>{{ c.stay.name or "Stay" }}</b> <span class="muted">{{ c.stay_geo.short_address if c.stay_geo else (c.stay.query or "") }}</span></div>{% endif %}
+</div>
+{% endif %}
+<div class="apps">
+  {% for e in c.toc %}
+  <div class="a"><span class="app" style="--accent: var(--c-{{ e.color }})">{{ icon(e.icon) }}<span class="badge">{{ e.page }}</span></span><span class="an">{{ e.title }}</span></div>
+  {% endfor %}
+</div>
+<div class="prompt"><span class="label">Instead of scrolling</span>{{ c.prompt }}</div>

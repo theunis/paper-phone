@@ -1,0 +1,10 @@
+<article class="page split">
+  {% for part in parts %}
+  {% set m = part.m %}{% set c = part.c %}{% set page = part.page %}
+  <section class="half m-{{ m.key }}" style="--accent: var(--c-{{ m.color }})">
+    <header class="ph"><span class="app">{{ icon(m.icon) }}</span><span class="ph-title">{{ m.title }}</span>{% if c.meta %}<span class="ph-meta">{{ c.meta }}</span>{% endif %}</header>
+    <div class="pc">{% include "modules/" ~ m.key ~ ".html.j2" %}</div>
+  </section>
+  {% endfor %}
+  <footer class="pf"><span>{{ footer }}</span><span class="folio">{{ n }}</span></footer>
+</article>
